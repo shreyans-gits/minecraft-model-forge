@@ -93,4 +93,4 @@ minecraft-model-forge/
 
 ## Built by
 
-Krish — part of a hands-on ML learning journey, building real projects from scratch.
+Shreyans — part of a hands-on ML learning journey, building real projects from scratch.
