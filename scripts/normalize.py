@@ -7,8 +7,13 @@ class Normalize:
 
     def normalize_model(self, data):
         normalized = {}
-        if "elements" in data:
-            normalized["elements"] = data["elements"]
+        
+        if "elements" in data and isinstance(data["elements"], list):
+            clean_elements = []
+            for element in data["elements"]:
+                clean_el = {k: v for k, v in element.items() if not k.startswith("__")}
+                clean_elements.append(clean_el)
+            normalized["elements"] = clean_elements
 
         if "textures" in data and isinstance(data["textures"], dict):
             normalized["textures"] = {key: "#0" for key in data["textures"]}
